@@ -1,6 +1,63 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --campus-primary: #ff6b35;
+  --campus-primary-dark: #e65320;
+  --campus-primary-ink: #ffffff;
+  --campus-link: #464feb;
+  --campus-accent: #ff9a70;
+  --campus-accent-soft: #ffe4d8;
+  --campus-accent-ink: #8a2e0c;
+  --campus-bg: #f8fafc;
+  --campus-bg-dark: #020817;
+  --campus-surface: #ffffff;
+  --campus-surface-dark: #0f172a;
+  --campus-text: #0f172a;
+  --campus-text-light: #e2e8f0;
+  --campus-muted: #64748b;
+  --campus-border: #e2e8f0;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--campus-bg);
+  color: var(--campus-text);
+}
+
+.dark body {
+  background-color: var(--campus-bg-dark);
+  color: var(--campus-text-light);
+}
+
+a:not([class]) {
+  color: var(--campus-link);
+  text-decoration: none;
+}
+
+tr th,
+tr td {
+  border: 1px solid #e6e6e6;
+}
+
+tr th {
+  background-color: #f5f5f5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
